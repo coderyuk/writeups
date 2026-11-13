@@ -1,8 +1,8 @@
-# [Challenge Name]
+# [hashgate]
 
 - **Event:** picoCTF
 - **Category:** [web]
-- **Difficulty:** [D]
+- **Difficulty:** [M]
 
 ---
 
@@ -20,19 +20,38 @@ checking the source code of the website
 
 ### Key Findings
 
-putting in fake values to login just to see what would happen i saw that /login.php page just hinted to check my cookies
-
 ```html
-<h1>Access Denied</h1>
-<p>Cookie Monster says: 'Me no need password. Me just need cookies!'</p>
-<p>Hint: Have you checked your cookies lately?</p>
-<a href="/">Go back</a>
+<!-- Email: guest@cylabacademy.org Password: guest -->
 ```
 
 ---
 
-![cookies](images/2026-11-12-00-20-03.png)
+using these login details we got
 
-on first when i checked the cookies in the network tab i couldnt notice anything by on seeing the post request being send i checked its cookies value to notice == at the end this could mean that the cookie might be encoded so i checked for it on CyberChef with base64 to get the flag directly
+![](images/2026-11-13-01-17-08.png)
 
-![flag](images/2026-11-12-00-23-00.png)
+we get ---- Access level: Guest (ID: 3000). Insufficient privileges to view classified data. Only top-tier users can access the flag.
+
+![we can see the url](images/2026-11-13-01-28-44.png)
+
+we can see that i the website is using the user/----hash to get the webpage back
+
+i know this is md5 hash (found this by asking gemini what was the value that was encoded and it replied that it is not encoded but is md5 hash of 3000 which was the user that we were assigned)
+
+by this login we can take any number (that may be a user or a admin) get its hash put it in the url and then find the webpage results directly without needing to sign in or know any passwords
+
+doing this manually is going to take for ever
+
+now i am going to learn how to write a python script that can do this automatically for different number ranges
+
+i made these 2 python script but they calculated it for users between 1 and 3000 and i got no request
+
+[urlhash.py python script 1](tools/urlhash.py)
+[urlhash2.py python script 2](tools/urlhash2.py)
+
+this final script checked for users beyond 3000 and this returned me the admin page
+[urlhash3.py python script 3](tools/urlhash3.py)
+
+![python script output](../images/python%20script%20output.png)
+
+this page contained the final flag
