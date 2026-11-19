@@ -1,0 +1,41 @@
+.:
+total 20
+drwxr-xr-x 4 ryuk ryuk 4096 Nov 19 19:18 .
+drwxrwxr-x 3 ryuk ryuk 4096 Nov 19 19:14 ..
+drwxr-xr-x 3 ryuk ryuk 4096 Sep 23 12:22 app
+drwxr-xr-x 2 ryuk ryuk 4096 Sep 23 12:22 db
+-rw-r--r-- 1 ryuk ryuk  480 Sep 23 06:29 docker-compose.yml
+-rw-rw-r-- 1 ryuk ryuk    0 Nov 19 19:18 filestructure.txt
+
+./app:
+total 16
+drwxr-xr-x 3 ryuk ryuk 4096 Sep 23 12:22 .
+drwxr-xr-x 4 ryuk ryuk 4096 Nov 19 19:18 ..
+-rw-r--r-- 1 ryuk ryuk  564 Sep 23 06:29 Dockerfile
+drwxr-xr-x 3 ryuk ryuk 4096 Sep 23 06:29 src
+
+./app/src:
+total 24
+drwxr-xr-x 3 ryuk ryuk 4096 Sep 23 06:29 .
+drwxr-xr-x 3 ryuk ryuk 4096 Sep 23 12:22 ..
+-rw-r--r-- 1 ryuk ryuk 1003 Sep 23 06:29 db.js
+-rw-r--r-- 1 ryuk ryuk 1038 Sep 23 06:29 handler.js
+-rw-r--r-- 1 ryuk ryuk 3329 Sep 23 06:29 server.js
+drwxr-xr-x 2 ryuk ryuk 4096 Sep 23 06:29 views
+
+./app/src/views:
+total 28
+drwxr-xr-x 2 ryuk ryuk 4096 Sep 23 06:29 .
+drwxr-xr-x 3 ryuk ryuk 4096 Sep 23 06:29 ..
+-rw-r--r-- 1 ryuk ryuk 2267 Sep 23 06:29 create_secret.ejs
+-rw-r--r-- 1 ryuk ryuk 2398 Sep 23 06:29 index.ejs
+-rw-r--r-- 1 ryuk ryuk 2560 Sep 23 06:29 login.ejs
+-rw-r--r-- 1 ryuk ryuk 3081 Sep 23 06:29 my_secrets.ejs
+-rw-r--r-- 1 ryuk ryuk 2562 Sep 23 06:29 signup.ejs
+
+./db:
+total 16
+drwxr-xr-x 2 ryuk ryuk 4096 Sep 23 12:22 .
+drwxr-xr-x 4 ryuk ryuk 4096 Nov 19 19:18 ..
+-rw-r--r-- 1 ryuk ryuk  131 Sep 23 06:29 Dockerfile
+-rw-r--r-- 1 ryuk ryuk  896 Sep 23 06:29 initdb.sql
